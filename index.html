@@ -33,9 +33,14 @@
         font-style: italic;
     }
 
-    a, button {
+    a,
+    button,
+    select,
+    input,
+    label {
         padding: 10px;
     }
+
     header,
     section {
         margin-bottom: 20px;
@@ -51,7 +56,7 @@
         </div>
         <h1>Инклюзивные решения - Поиск работы для всех</h1>
 
-        <menu>
+        <nav aria-lagel="Основное меню">
             <h2>Меню</h2>
             <ul>
                 <li><a href="/">Главная</a></li>
@@ -59,7 +64,7 @@
                 <li><a href="/about">О компании</a></li>
                 <li><a href="/contacts">Контакты</a></li>
             </ul>
-        </menu>
+        </nav>
     </header>
 
     <section>
@@ -70,8 +75,8 @@
 
         <h2>Актуальные вакансии</h2>
 
-        <div>
-            <div>
+        <ul>
+            <li>
                 <h3 class="job">Специалист по доступности</h3>
                 <span>Подробнее о вакансии</span>
                 <details>
@@ -80,10 +85,10 @@
                     разработки по внедрению принципов универсального
                     дизайна.Удаленная работа, гибкий график.
                 </details>
-            </div>
+            </li>
 
-            <div>
-                <h2 class="job">UX-дизайнер инклюзивных интерфейсов</h2>
+            <li>
+                <h3 class="job">UX-дизайнер инклюзивных интерфейсов</h3>
                 <span>Подробнее о вакансии</span>
                 <details>
                     Создание пользовательских интерфейсов с учетом
@@ -92,10 +97,10 @@
                     инклюзивных дизайн-систем. Возможность работы из офиса с
                     полной адаптацией рабочего места.
                 </details>
-            </div>
+            </li>
 
-            <div>
-                <h4 class="job">Frontend-разработчик</h4>
+            <li>
+                <h3 class="job">Frontend-разработчик</h3>
                 <span>Подробнее о вакансии</span>
                 <details>
                     Разработка веб-приложений с использованием современных
@@ -104,8 +109,8 @@
                     разметкой. Команда поддерживает использование
                     ассистивных технологий.
                 </details>
-            </div>
-        </div>
+            </li>
+        </ul>
 
         <div>
             <h2>Подать заявку</h2>
@@ -115,10 +120,10 @@
         </div>
     </section>
 
-    <div class="modal hidden" id="modal">
+    <div class="modal hidden" id="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
         <div class="heading">
             <h3>Ваш отклик</h3>
-            <button onclick="document.querySelector('#modal').classList.add('hidden')">
+            <button aria-label="Закрыть" onclick="document.querySelector('#modal').classList.add('hidden')">
                 ❌
             </button>
         </div>
@@ -131,34 +136,36 @@
             </select>
 
             <div>
-                <span id="work_format_label">Предпочитаемый формат работы</span>
-                <label for="format1">
-                    <input id="format1" type="checkbox" checked />
-                    Удаленно
-                </label>
-                <label for="format2">
-                    <input id="format2" type="checkbox" />
-                    Офис
-                </label>
-                <label for="format3">
-                    <input id="format3" type="checkbox" />
-                    Гибрид
-                </label>
+                <fieldset>
+                    <legend id="work_format_label">Предпочитаемый формат работы</legend>
+                    <label for="format1">
+                        <input id="format1" type="checkbox" checked />
+                        Удаленно
+                    </label>
+                    <label for="format2">
+                        <input id="format2" type="checkbox" />
+                        Офис
+                    </label>
+                    <label for="format3">
+                        <input id="format3" type="checkbox" />
+                        Гибрид
+                    </label>
+                </fieldset>
             </div>
 
             <div>
                 <label for="email">Электронная почта:</label>
-                <input id="email" type="email" required />
+                <input id="email" type="email" aria-required="true" required />
             </div>
 
             <div>
                 <label for="phone">Телефон</label>
-                <input id="phone" type="number" required />
+                <input id="phone" type="tel" aria-required="true" required />
             </div>
 
             <div>
                 <label for="experience">Опыт работы (лет)</label>
-                <input id="experience" type="number" required />
+                <input id="experience" type="number" aria-required="true" required />
             </div>
 
             <div>
@@ -181,6 +188,38 @@
         <div>ул. Первомайская, д.1, офис для всех</div>
         <div>(с) Инклюзивные решения 2025</div>
     </footer>
+
+    <script>
+        document.getElementById('apply').addEventListener('click', function () {
+            const modal = document.getElementById('modal');
+            modal.classList.remove('hidden');
+            modal.focus();
+
+            // Ловушка фокуса
+            const focusable = modal.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
+            const first = focusable[0];
+            const last = focusable[focusable.length - 1];
+
+            modal.addEventListener('keydown', function (e) {
+                if (e.key === 'Tab') {
+                    if (e.shiftKey) {
+                        if (document.activeElement === first) {
+                            e.preventDefault();
+                            last.focus();
+                        }
+                    } else {
+                        if (document.activeElement === last) {
+                            e.preventDefault();
+                            first.focus();
+                        }
+                    }
+                }
+                if (e.key === 'Escape') {
+                    modal.classList.add('hidden');
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>
