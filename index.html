@@ -1,12 +1,13 @@
 <!doctype html>
-<html>
+<html lang="ru">
 
-<head lang="f">
+<head>
     <meta charset="UTF-8" />
+    <title>Инклюзивные решения — Поиск работы для всех</title>
 </head>
 <style>
     * {
-            font-family: Arial, sans-serif;
+        font-family: Arial, sans-serif;
     }
 
     .hidden {
@@ -31,33 +32,43 @@
         font-size: medium;
         font-style: italic;
     }
+
+    a, button {
+        padding: 10px;
+    }
+    header,
+    section {
+        margin-bottom: 20px;
+    }
 </style>
 
 <body>
-    <div>
-        <a href="/">
-            <img src="https://contest.yandex.rumedia/logo.jpg" alt="Логотип Яндекса" />
-        </a>
-    </div>
-    <h2>Инклюзивные решения - Поиск работы для всех</h2>
+    <header>
+        <div>
+            <a href="/">
+                <img src="https://contest.yandex.rumedia/logo.jpg" alt="Логотип Яндекса" />
+            </a>
+        </div>
+        <h1>Инклюзивные решения - Поиск работы для всех</h1>
 
-    <div>
-        <h4>Меню</h4>
-        <ul>
-            <li><a href="/">Главная</a></li>
-            <li><a href="/vacancies">Вакансии</a></li>
-            <li><a href="/about">О компании</a></li>
-            <li><a href="/contacts">Контакты</a></li>
-        </ul>
-    </div>
+        <menu>
+            <h2>Меню</h2>
+            <ul>
+                <li><a href="/">Главная</a></li>
+                <li><a href="/vacancies">Вакансии</a></li>
+                <li><a href="/about">О компании</a></li>
+                <li><a href="/contacts">Контакты</a></li>
+            </ul>
+        </menu>
+    </header>
 
-    <div>
+    <section>
         <p>
             Мы создаем равные возможности трудоустройства для людей с
             ограничениями и помогаем компаниям строить инклюзивные команды!
         </p>
 
-        <h3>Актуальные вакансии</h3>
+        <h2>Актуальные вакансии</h2>
 
         <div>
             <div>
@@ -98,18 +109,18 @@
 
         <div>
             <h2>Подать заявку</h2>
-            <div onclick="document.querySelector('.modal').classList.remove('hidden');">
-                <button id="apply">Откликнуться на вакансию</button>
-            </div>
+            <button id="apply" onclick="document.querySelector('.modal').classList.remove('hidden');">
+                Откликнуться на вакансию
+            </button>
         </div>
-    </div>
+    </section>
 
     <div class="modal hidden" id="modal">
         <div class="heading">
             <h3>Ваш отклик</h3>
-            <div tabindex="-1" onclick="document.querySelector('#modal').classList.add('hidden')">
+            <button onclick="document.querySelector('#modal').classList.add('hidden')">
                 ❌
-            </div>
+            </button>
         </div>
         <div>
             <label for="select">Выберите вакансию</label>
@@ -163,15 +174,13 @@
     </div>
 
     <div>
-        <div>
-            Присоединяйтесь к нашему сообществу инклюзивных работодателей!
-        </div>
+        Присоединяйтесь к нашему сообществу инклюзивных работодателей!
     </div>
 
-    <div>
+    <footer>
         <div>ул. Первомайская, д.1, офис для всех</div>
         <div>(с) Инклюзивные решения 2025</div>
-    </div>
+    </footer>
 </body>
 
 </html>
