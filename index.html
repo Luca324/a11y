@@ -35,8 +35,8 @@
 
 <body>
     <div>
-        <a href="/" alt="Логотип Яндекса">
-            <img src="https://contest.yandex.rumedia/logo.jpg" />
+        <a href="/">
+            <img src="https://contest.yandex.rumedia/logo.jpg" alt="Логотип Яндекса" />
         </a>
     </div>
     <h2>Инклюзивные решения - Поиск работы для всех</h2>
@@ -112,7 +112,7 @@
             </div>
         </div>
         <div>
-            <span>Выберите вакансию</span>
+            <label for="select">Выберите вакансию</label>
             <select id="select">
                 <option>Специалист по доступности</option>
                 <option>UX-дизайнер инклюзивных интерфейсов</option>
@@ -121,31 +121,37 @@
 
             <div>
                 <span id="work_format_label">Предпочитаемый формат работы</span>
-                <span>Удаленно</span>
-                <input id="format1" type="checkbox" checked />
-                <span>Офис</span>
-                <input id="format2" type="checkbox" />
-                <span>Гибрид</span>
-                <input id="format3" type="checkbox" />
+                <label for="format1">
+                    <input id="format1" type="checkbox" checked />
+                    Удаленно
+                </label>
+                <label for="format2">
+                    <input id="format2" type="checkbox" />
+                    Офис
+                </label>
+                <label for="format3">
+                    <input id="format3" type="checkbox" />
+                    Гибрид
+                </label>
             </div>
 
             <div>
-                <span>Электронная почта:</span>
-                <input type="email" required />
+                <label for="email">Электронная почта:</label>
+                <input id="email" type="email" required />
             </div>
 
             <div>
-                <span>Телефон</span>
-                <input type="number" required />
+                <label for="phone">Телефон</label>
+                <input id="phone" type="number" required />
             </div>
 
             <div>
-                <span>Опыт работы (лет)</span>
-                <input type="number" required />
+                <label for="experience">Опыт работы (лет)</label>
+                <input id="experience" type="number" required />
             </div>
 
             <div>
-                <span>Особые потребности для рабочего места </span>
+                <label for="accessibility_needs">Особые потребности для рабочего места </label>
                 <textarea id="accessibility_needs" rows="3"
                     placeholder="Опишите необходимые адаптации рабочего места, если требуются"></textarea>
             </div>
