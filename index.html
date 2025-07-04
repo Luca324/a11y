@@ -56,7 +56,7 @@
         </div>
         <h1>Инклюзивные решения - Поиск работы для всех</h1>
 
-        <nav aria-lagel="Основное меню">
+        <nav aria-label="Основное меню">
             <h2>Меню</h2>
             <ul>
                 <li><a href="/">Главная</a></li>
@@ -67,122 +67,122 @@
         </nav>
     </header>
 
-    <section>
-        <p>
-            Мы создаем равные возможности трудоустройства для людей с
-            ограничениями и помогаем компаниям строить инклюзивные команды!
-        </p>
+    <main>
+        <section>
+            <p>
+                Мы создаем равные возможности трудоустройства для людей с
+                ограничениями и помогаем компаниям строить инклюзивные команды!
+            </p>
 
-        <h2>Актуальные вакансии</h2>
+            <h2>Актуальные вакансии</h2>
 
-        <ul>
-            <li>
-                <h3 class="job">Специалист по доступности</h3>
-                <span>Подробнее о вакансии</span>
-                <details>
-                    Тестирование веб-приложений и мобильных приложений на
-                    соответствие стандартам WCAG. Работа с командами
-                    разработки по внедрению принципов универсального
-                    дизайна.Удаленная работа, гибкий график.
-                </details>
-            </li>
+            <ul>
+                <li>
+                    <h3 class="job">Специалист по доступности</h3>
+                    <span>Подробнее о вакансии</span>
+                    <details>
+                        <summary>Описание вакансии</summary>
+                        Тестирование веб-приложений и мобильных приложений на
+                        соответствие стандартам WCAG. Работа с командами
+                        разработки по внедрению принципов универсального
+                        дизайна. Удаленная работа, гибкий график.
+                    </details>
+                </li>
 
-            <li>
-                <h3 class="job">UX-дизайнер инклюзивных интерфейсов</h3>
-                <span>Подробнее о вакансии</span>
-                <details>
-                    Создание пользовательских интерфейсов с учетом
-                    потребностей людей с различными особенностями.
-                    Проведение исследований доступности, создание
-                    инклюзивных дизайн-систем. Возможность работы из офиса с
-                    полной адаптацией рабочего места.
-                </details>
-            </li>
+                <li>
+                    <h3 class="job">UX-дизайнер инклюзивных интерфейсов</h3>
+                    <span>Подробнее о вакансии</span>
+                    <details>
+                        <summary>Описание вакансии</summary>
+                        Создание пользовательских интерфейсов с учетом
+                        потребностей людей с различными особенностями.
+                        Проведение исследований доступности, создание
+                        инклюзивных дизайн-систем. Возможность работы из офиса с
+                        полной адаптацией рабочего места.
+                    </details>
+                </li>
 
-            <li>
-                <h3 class="job">Frontend-разработчик</h3>
-                <span>Подробнее о вакансии</span>
-                <details>
-                    Разработка веб-приложений с использованием современных
-                    технологий и обязательным соблюдением принципов
-                    доступности. Опыт работы с ARIA, семантической
-                    разметкой. Команда поддерживает использование
-                    ассистивных технологий.
-                </details>
-            </li>
-        </ul>
+                <li>
+                    <h3 class="job">Frontend-разработчик</h3>
+                    <span>Подробнее о вакансии</span>
+                    <details>
+                        <summary>Описание вакансии</summary>
+                        Разработка веб-приложений с использованием современных
+                        технологий и обязательным соблюдением принципов
+                        доступности. Опыт работы с ARIA, семантической
+                        разметкой. Команда поддерживает использование
+                        ассистивных технологий.
+                    </details>
+                </li>
+            </ul>
+        </section>
 
-        <div>
+        <section>
             <h2>Подать заявку</h2>
             <button id="apply" onclick="document.querySelector('.modal').classList.remove('hidden');">
                 Откликнуться на вакансию
             </button>
-        </div>
-    </section>
+        </section>
 
-    <div class="modal hidden" id="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
-        <div class="heading">
-            <h3>Ваш отклик</h3>
-            <button aria-label="Закрыть" onclick="document.querySelector('#modal').classList.add('hidden')">
-                ❌
-            </button>
-        </div>
-        <div>
-            <label for="select">Выберите вакансию</label>
-            <select id="select">
-                <option>Специалист по доступности</option>
-                <option>UX-дизайнер инклюзивных интерфейсов</option>
-                <option>Frontend-разработчик</option>
-            </select>
+        <div class="modal hidden" id="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" tabindex="-1">
+            <div class="heading">
+                <h3 id="modal-title">Ваш отклик</h3>
+                <button aria-label="Закрыть" onclick="document.querySelector('#modal').classList.add('hidden')">
+                    ❌
+                </button>
+            </div>
+            <form>
+                <label for="select">Выберите вакансию</label>
+                <select id="select" required>
+                    <option>Специалист по доступности</option>
+                    <option>UX-дизайнер инклюзивных интерфейсов</option>
+                    <option>Frontend-разработчик</option>
+                </select>
 
-            <div>
                 <fieldset>
                     <legend id="work_format_label">Предпочитаемый формат работы</legend>
                     <label for="format1">
-                        <input id="format1" type="checkbox" checked />
-                        Удаленно
+                        <input id="format1" type="checkbox" /> Удаленно
                     </label>
                     <label for="format2">
-                        <input id="format2" type="checkbox" />
-                        Офис
+                        <input id="format2" type="checkbox" /> Офис
                     </label>
                     <label for="format3">
-                        <input id="format3" type="checkbox" />
-                        Гибрид
+                        <input id="format3" type="checkbox" /> Гибрид
                     </label>
                 </fieldset>
-            </div>
 
-            <div>
-                <label for="email">Электронная почта:</label>
-                <input id="email" type="email" aria-required="true" required />
-            </div>
+                <div>
+                    <label for="email">Электронная почта:</label>
+                    <input id="email" type="email" aria-required="true" required />
+                </div>
 
-            <div>
-                <label for="phone">Телефон</label>
-                <input id="phone" type="tel" aria-required="true" required />
-            </div>
+                <div>
+                    <label for="phone">Телефон</label>
+                    <input id="phone" type="tel" aria-required="true" required />
+                </div>
 
-            <div>
-                <label for="experience">Опыт работы (лет)</label>
-                <input id="experience" type="number" aria-required="true" required />
-            </div>
+                <div>
+                    <label for="experience">Опыт работы (лет)</label>
+                    <input id="experience" type="number" aria-required="true" required />
+                </div>
 
-            <div>
-                <label for="accessibility_needs">Особые потребности для рабочего места </label>
-                <textarea id="accessibility_needs" rows="3"
-                    placeholder="Опишите необходимые адаптации рабочего места, если требуются"></textarea>
-            </div>
+                <div>
+                    <label for="accessibility_needs">Особые потребности для рабочего места </label>
+                    <textarea id="accessibility_needs" rows="3"
+                        placeholder="Опишите необходимые адаптации рабочего места, если требуются"></textarea>
+                </div>
 
-            <button onclick="alert('Заявка отправлена!')">
-                Подать заявку
-            </button>
+                <button type="submit">
+                    Подать заявку
+                </button>
+            </form>
         </div>
-    </div>
 
-    <div>
-        Присоединяйтесь к нашему сообществу инклюзивных работодателей!
-    </div>
+        <div>
+            Присоединяйтесь к нашему сообществу инклюзивных работодателей!
+        </div>
+    </main>
 
     <footer>
         <div>ул. Первомайская, д.1, офис для всех</div>
