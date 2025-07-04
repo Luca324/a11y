@@ -123,66 +123,66 @@
                 Откликнуться на вакансию
             </button>
         </section>
-
-        <div class="modal hidden" id="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" tabindex="-1">
-            <div class="heading">
-                <h3 id="modal-title">Ваш отклик</h3>
-                <button aria-label="Закрыть" onclick="document.querySelector('#modal').classList.add('hidden')">
-                    ❌
-                </button>
-            </div>
-            <form>
-                <label for="select">Выберите вакансию</label>
-                <select id="select" required>
-                    <option>Специалист по доступности</option>
-                    <option>UX-дизайнер инклюзивных интерфейсов</option>
-                    <option>Frontend-разработчик</option>
-                </select>
-
-                <fieldset>
-                    <legend id="work_format_label">Предпочитаемый формат работы</legend>
-                    <label for="format1">
-                        <input id="format1" type="checkbox" /> Удаленно
-                    </label>
-                    <label for="format2">
-                        <input id="format2" type="checkbox" /> Офис
-                    </label>
-                    <label for="format3">
-                        <input id="format3" type="checkbox" /> Гибрид
-                    </label>
-                </fieldset>
-
-                <div>
-                    <label for="email">Электронная почта:</label>
-                    <input id="email" type="email" aria-required="true" required />
-                </div>
-
-                <div>
-                    <label for="phone">Телефон</label>
-                    <input id="phone" type="tel" aria-required="true" required />
-                </div>
-
-                <div>
-                    <label for="experience">Опыт работы (лет)</label>
-                    <input id="experience" type="number" aria-required="true" required />
-                </div>
-
-                <div>
-                    <label for="accessibility_needs">Особые потребности для рабочего места </label>
-                    <textarea id="accessibility_needs" rows="3"
-                        placeholder="Опишите необходимые адаптации рабочего места, если требуются"></textarea>
-                </div>
-
-                <button type="submit">
-                    Подать заявку
-                </button>
-            </form>
-        </div>
-
-        <div>
-            Присоединяйтесь к нашему сообществу инклюзивных работодателей!
-        </div>
     </main>
+
+    <div class="modal hidden" id="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" tabindex="-1">
+        <div class="heading">
+            <h3 id="modal-title">Ваш отклик</h3>
+            <button aria-label="Закрыть" onclick="document.querySelector('#modal').classList.add('hidden')">
+                ❌
+            </button>
+        </div>
+        <form>
+            <label for="select">Выберите вакансию</label>
+            <select id="select" required>
+                <option>Специалист по доступности</option>
+                <option>UX-дизайнер инклюзивных интерфейсов</option>
+                <option>Frontend-разработчик</option>
+            </select>
+
+            <fieldset>
+                <legend id="work_format_label">Предпочитаемый формат работы</legend>
+                <label for="format1">
+                    <input id="format1" type="checkbox" /> Удаленно
+                </label>
+                <label for="format2">
+                    <input id="format2" type="checkbox" /> Офис
+                </label>
+                <label for="format3">
+                    <input id="format3" type="checkbox" /> Гибрид
+                </label>
+            </fieldset>
+
+            <div>
+                <label for="email">Электронная почта:</label>
+                <input id="email" type="email" aria-required="true" required />
+            </div>
+
+            <div>
+                <label for="phone">Телефон</label>
+                <input id="phone" type="tel" aria-required="true" required />
+            </div>
+
+            <div>
+                <label for="experience">Опыт работы (лет)</label>
+                <input id="experience" type="number" aria-required="true" required />
+            </div>
+
+            <div>
+                <label for="accessibility_needs">Особые потребности для рабочего места </label>
+                <textarea id="accessibility_needs" rows="3"
+                    placeholder="Опишите необходимые адаптации рабочего места, если требуются"></textarea>
+            </div>
+
+            <button type="submit">
+                Подать заявку
+            </button>
+        </form>
+    </div>
+
+    <div>
+        Присоединяйтесь к нашему сообществу инклюзивных работодателей!
+    </div>
 
     <footer>
         <div>ул. Первомайская, д.1, офис для всех</div>
